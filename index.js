@@ -13,9 +13,7 @@ const morgan = require('morgan');
 // do app logging to files in containers.
 
 const MongoClient = require('mongodb').MongoClient;
-// this example includes a connection to MongoDB
-
-
+// this example includes a connection to MongoDB ...
 
 const {
   MONGO_USERNAME,
