@@ -8,6 +8,8 @@ pipeline {
             steps {
                 echo 'Init'
                 echo '******************************'
+                
+                git branch: 'main', url: 'https://github.com/Base2526/node-docker-good-defaults.git'
             }
         }
  
