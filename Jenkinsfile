@@ -24,7 +24,7 @@ pipeline {
                 echo 'Building Docker Image'
                 echo '******************************'
                 
-                dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                dockerImage = docker.build "yenigul/hacicenkins"
             }
         }
  
