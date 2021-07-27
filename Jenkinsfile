@@ -24,7 +24,10 @@ pipeline {
                 echo 'Building Docker Image'
                 echo '******************************'
                 
-                dockerImage = docker.build "yenigul/hacicenkins"
+                // dockerImage = docker.build "yenigul/hacicenkins"
+                script {
+                    dockerImage = docker.build "yenigul/hacicenkins"
+                }
             }
         }
  
