@@ -1,22 +1,30 @@
 pipeline {
     
+     environment {
+       // registry = “bkshashi9/webapp”
+       // registryCredential = ‘dockerhub’
+       dockerImage = ''
+     }
+    
     agent any  
  
     stages {
  
-        stage('Init'){
+        stage('Cloning Git'){
             steps {
-                echo 'Init'
+                echo 'Cloning Git'
                 echo '******************************'
                 
                 git branch: 'main', url: 'https://github.com/Base2526/node-docker-good-defaults.git'
             }
         }
  
-        stage('Yarn Install') {
+        stage('Building Docker Image') {
             steps {
-                echo 'Yarn Install'
+                echo 'Building Docker Image'
                 echo '******************************'
+                
+                dockerImage = docker.build registry + “:$BUILD_NUMBER”
             }
         }
  
