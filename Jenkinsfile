@@ -4,6 +4,8 @@ pipeline {
        // registry = “bkshashi9/webapp”
        // registryCredential = ‘dockerhub’
        dockerImage = ''
+         
+         registry = "naistangz/docker_automation"
      }
     
     agent any  
@@ -27,7 +29,9 @@ pipeline {
                 // dockerImage = docker.build "yenigul/hacicenkins"
                 script {
                     // dockerImage = docker.build "yenigul/hacicenkins"
-                    dockerImage = docker.build "yenigul/hacicenkins"
+                    // dockerImage = docker.build "yenigul/hacicenkins"
+                    
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
         }
