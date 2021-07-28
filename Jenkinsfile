@@ -31,7 +31,9 @@ pipeline {
                     // dockerImage = docker.build "yenigul/hacicenkins"
                     // dockerImage = docker.build "yenigul/hacicenkins"
                     
-                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    // dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                    
+                    'sh docker build . -t test/test'
                 }
             }
         }
